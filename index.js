@@ -280,8 +280,16 @@ CASAuthentication.prototype.logout = function(req, res, next) {
         }
     }
 
+    var query = {
+        url: this.service_url,
+        service: this.service_url + url.parse(req.originalUrl).pathname
+    };
+
     // Redirect the client to the CAS logout.
-    res.redirect(this.cas_url + '/logout');
+    res.redirect(this.cas_url+ url.format({
+        pathname: '/logout',
+        query: query
+    }));
 };
 
 /**

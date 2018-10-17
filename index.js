@@ -356,7 +356,7 @@ CASAuthentication.prototype._handleTicket = function(req, res, next) {
                 }
                 else {
                     req.session[ this.session_name ] = user;
-                    if (this.session_info) {
+                    if (attributes) {
                         req.session[ this.session_info ] = attributes || {};
                     }
                     res.redirect(req.session.cas_return_to);

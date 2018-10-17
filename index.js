@@ -319,7 +319,7 @@ CASAuthentication.prototype._handleTicket = function(req, res, next) {
                         '  <SOAP-ENV:Header/>\n' +
                         '  <SOAP-ENV:Body>\n' +
                         '    <samlp:Request xmlns:samlp="urn:oasis:names:tc:SAML:1.0:protocol" MajorVersion="1"\n' +
-                        '      MinorVersion="1" RequestID="_' + req.host + '.' + now.getTime() + '"\n' +
+                        '      MinorVersion="1" RequestID="_' + req.hostname + '.' + now.getTime() + '"\n' +
                         '      IssueInstant="' + now.toISOString() + '">\n' +
                         '      <samlp:AssertionArtifact>\n' +
                         '        ' + req.query.ticket + '\n' +
